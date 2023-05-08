@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace Paint.Shape
@@ -113,8 +114,8 @@ namespace Paint.Shape
 
         public override bool InRegion(Point point)
         {
-            return start.X <= point.X && start.Y <= point.Y &&
-                    end.X >= point.X && end.Y >= point.Y;
+            return Math.Min(base.start.X, end.X) <= point.X && Math.Min(base.start.Y, end.Y) <= point.Y &&
+                   Math.Max(base.start.X, end.X) >= point.X && Math.Max(base.start.Y, end.Y) >= point.Y;
         }
         public override void UpdateNextPoint(Point point)
         {

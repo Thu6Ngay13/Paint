@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 using Paint.Shape;
@@ -160,26 +161,32 @@ namespace Paint
         private void btnLine_Click(object sender, EventArgs e)
         {
             typeDraw = 1;
+            takedFirstPoint = false;
         }
         private void btnRectangle_Click(object sender, EventArgs e)
         {
             typeDraw = 2;
+            takedFirstPoint = false;
         }
         private void btnElipse_Click(object sender, EventArgs e)
         {
             typeDraw = 3;
+            takedFirstPoint = false;
         }
         private void btnPentagon_Click(object sender, EventArgs e)
         {
             typeDraw = 4;
+            takedFirstPoint = false;
         }
         private void btnPolygon_Click(object sender, EventArgs e)
         {
             typeDraw = 5;
+            takedFirstPoint = false;
         }
         private void btnArc_Click(object sender, EventArgs e)
         {
             typeDraw = 6;
+            takedFirstPoint = false;
         }
 
         private void pnlPaper_Paint(object sender, PaintEventArgs e)
@@ -222,6 +229,7 @@ namespace Paint
         }
         private void pnlPaper_MouseMove(object sender, MouseEventArgs e)
         {
+            Debug.WriteLine(Shapes.Count.ToString());
             if (rdbSelectShape.Checked)
             {
                 Point delta = new Point(e.Location.X - nextPoint.X, e.Location.Y - nextPoint.Y);
