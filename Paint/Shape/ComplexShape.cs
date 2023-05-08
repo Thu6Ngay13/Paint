@@ -128,6 +128,22 @@ namespace Paint.Shape
             isResizing = false;
         }
 
+        public override void change_SizeOfOutline(float sizeoutline)
+        {
+            foreach (ObjectShape ob in Shapes)
+                ob.change_SizeOfOutline(sizeoutline);
+        }
+        public override void change_ColorOfFill(object fill)
+        {
+            foreach (ObjectShape ob in Shapes)
+                ob.change_ColorOfFill(fill);
+        }
+        public override void change_ColorOfOutline(Color outline)
+        {
+            foreach (ObjectShape ob in Shapes)
+                ob.change_ColorOfOutline(outline);
+        }
+
         public override bool InRegion(Point point)
         {
             return start.X <= point.X && start.Y <= point.Y &&

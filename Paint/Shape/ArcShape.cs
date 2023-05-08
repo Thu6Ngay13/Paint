@@ -109,19 +109,6 @@ namespace Paint.Shape
             isResizing = false;
         }
 
-        public override void change_SizeOfOutline(float sizeoutline)
-        {
-            base.change_SizeOfOutline(sizeoutline);
-        }
-        public override void change_ColorOfFill(object fill)
-        {
-            base.change_ColorOfFill(fill);
-        }
-        public override void change_ColorOfOutline(Color outline)
-        {
-            base.change_ColorOfOutline(outline);
-        }
-
         public override bool InRegion(Point point)
         {
             return start.X <= point.X && start.Y <= point.Y &&

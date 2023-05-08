@@ -314,7 +314,11 @@ namespace Paint
             foreach(ObjectShape ob in SelectedShapes)
             {
                 ob.Unselected();
-                Shapes.Remove(ob);
+                if(ob is ComplexShape)
+                    foreach (ObjectShape shape in (ob as ComplexShape).Shapes)
+                        Shapes.Remove(shape);
+                else
+                    Shapes.Remove(ob);
             }
             SelectedShapes.Clear();
             this.pnlPaper.Refresh();
