@@ -2,7 +2,7 @@
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Shape
+namespace Paint.Shape
 {
     public class LineShape : ObjectShape
     {

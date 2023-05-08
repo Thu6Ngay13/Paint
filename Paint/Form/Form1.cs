@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
-using System.Drawing.Imaging;
-using System.IO;
-using System.Linq;
 using System.Windows.Forms;
-using Shape;
+using Paint.Shape;
+using Paint.Tool;
 
 namespace Paint
 {
@@ -24,6 +21,7 @@ namespace Paint
         {
             InitializeComponent();
 
+            this.pnlPaper.SetDoubleBuffered();
             Shapes = new List<ObjectShape>();
             SelectedShapes = new List<ObjectShape>();
             rdbSelectShape.Focus();

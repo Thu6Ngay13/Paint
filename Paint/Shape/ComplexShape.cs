@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace Shape
+namespace Paint.Shape
 {
     public class ComplexShape : ObjectShape
     {

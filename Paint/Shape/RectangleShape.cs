@@ -4,7 +4,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
-namespace Shape
+namespace Paint.Shape
 {
     public class RectangleShape : ObjectShape
     {
